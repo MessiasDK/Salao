@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2023 10:36:19 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.Artigo" table="artigo" catalog="salao_brecho" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nome" type="string">
+            <column name="Nome" length="40" not-null="true" />
+        </property>
+        <property name="preco" type="double">
+            <column name="Preco" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="quantidade" type="int">
+            <column name="Quantidade" not-null="true" />
+        </property>
+        <property name="idCliente" type="int">
+            <column name="Id_Cliente" not-null="true" unique="true" />
+        </property>
+        <property name="cor" type="string">
+            <column name="Cor" length="1000" not-null="true" />
+        </property>
+        <property name="tamanho" type="string">
+            <column name="Tamanho" length="1000" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
