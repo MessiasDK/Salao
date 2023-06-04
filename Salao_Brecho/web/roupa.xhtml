@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:images="http://xmlns.jcp.org/jsf/composite/images">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+         <br></br>
+        <br></br>
+        <br></br>
+        <h:form>  
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+       
+ 
+        <p:menuitem value="Marcação" url="http://www.primefaces.org" icon="pi pi-shopping-bag" />
+        <p:menuitem value="Roupa" url="http://www.primefaces.org" icon="pi pi-shopping-bag" />
+        <p:menuitem value="About Us" url="http://www.primefaces.org" icon="pi pi-users" />
+ 
+        <f:facet name="options">
+            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+            <p:commandButton type="button" value="Log In" icon="pi pi-home" />
+        </f:facet>
+    </p:menubar>
+</h:form>
+        
+        <p:divider align="center" type="dashed">
+        <b>Roupas</b>
+    </p:divider>
+        <style>
+    .ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell {
+        text-align: center;
+        margin-left: 90px;
+    }
+
+    .customPanelGrid .ui-panelgrid-content {
+        align-items: center;
+    }
+</style>
+
+        <h:form>
+        <p:card style="width: 25em">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/Manguene.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            </h:form>
+    
+    </h:body>
+</html>
+
