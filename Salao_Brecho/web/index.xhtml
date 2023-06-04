@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:images="http://xmlns.jcp.org/jsf/composite/images">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -17,26 +18,8 @@
     <p:menubar>
        
  
-        <p:submenu label="Help" icon="pi pi-question">
-            <p:menuitem value="Contents" url="#" />
-            <p:submenu label="Search" icon="pi pi-search">
-                <p:submenu label="Text">
-                    <p:menuitem value="Workspace" url="#" />
-                </p:submenu>
-                <p:menuitem value="File" url="#" />
-            </p:submenu>
-        </p:submenu>
- 
-        <p:submenu label="Roupa" icon="pi pi-shopping-bag">
-            <p:submenu label="Mulher" icon="pi pi-shopping-bag">
-                <p:menuitem value="Criança" action="#{menuView.save}" icon="pi pi-shopping-bag" update="messages"/>
-                <p:menuitem value="Adulta" action="#{menuView.update}" icon="pi pi-shopping-bag" update="messages"/>
-            </p:submenu>
-            <p:submenu label="Homem" icon="pi pi-shopping-bag">
-                <p:menuitem value="Adulto" action="#{menuView.delete}" icon="pi pi-shopping-bag" update="messages" ajax="false"/>
-            </p:submenu>
-        </p:submenu>
- 
+        <p:menuitem value="Marcação" url="http://www.primefaces.org" icon="pi pi-shopping-bag" />
+        <p:menuitem value="Roupa" url="http://localhost:8080/Salao_Brecho/faces/roupa.xhtml" icon="pi pi-shopping-bag"  />
         <p:menuitem value="About Us" url="http://www.primefaces.org" icon="pi pi-users" />
  
         <f:facet name="options">
@@ -56,7 +39,26 @@
         <div class="product ">
             <p:carousel circular="true" paginator="false">
         <h:form>
-<p:card style="width: 25em">
+<p:card style="width: 20em">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/Calebe.jpg" />
+        <a href="http://localhost:8080/Salao_Brecho/faces/index.xhtml"/>
+    </f:facet>
+    <f:facet name="title">
+        Advanced Card
+    </f:facet>
+    <f:facet name="subtitle">
+        <p:button value="Primary" styleClass="ui-button-raised ui-button-flat" href="http://localhost:8080/Salao_Brecho/faces/index.xhtml" />
+    </f:facet>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+        quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+    </p>
+
+   
+</p:card>
+            
+            <p:card style="width: 20em; margin-left:420px; margin-top: -530px">
     <f:facet name="header">
         <img alt="user header" src="resources/images/Calebe.jpg"/>
     </f:facet>
@@ -64,7 +66,7 @@
         Advanced Card
     </f:facet>
     <f:facet name="subtitle">
-        Card subtitle
+         <p:button value="Primary" styleClass="ui-button-raised ui-button-flat" />
     </f:facet>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
@@ -72,42 +74,63 @@
 
    
 </p:card>
+  
+             <p:card style="width: 20em; margin-left:840px; margin-top: -530px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/Calebe.jpg"/>
+    </f:facet>
+    <f:facet name="title">
+        Advanced Card
+    </f:facet>
+    <f:facet name="subtitle">
+        <p:button value="Primary" styleClass="ui-button-raised ui-button-flat" href="http://localhost:8080/Salao_Brecho/faces/index.xhtml" />
+    </f:facet>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+        quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+
+ 
+</p:card>
             
 </h:form>
                 </p:carousel>
       </div>
         
-        <div class="card">
-    <h:form>
-        <p:dataScroller value="#{dataScrollerView.products}" var="product" chunkSize="10">
-            <f:facet name="header">
-                Scroll Down to Load More Products
-            </f:facet>
+  
+        
+        <div>
+            
+            <p:divider align="center">
+        <span class="ui-tag">BREVE HISTORIAL</span>
+    </p:divider>
 
-            <div class="product">
-                <div class="product-list-item p-5">
-                    <p:graphicImage name="resources/images/Untitled.png" url="resources/images/Calebe.jpg"/>
-                    <div class="product-list-detail">
-                        <div class="product-name">#{product.name}</div>
-                        <div class="product-description">#{product.description}</div>
-                        <p:rating readonly="true" value="#{product.rating}"/>
-                        <i class="pi pi-tag product-category-icon"/><span
-                            class="product-category">#{product.category}</span>
-                    </div>
-                    <div class="product-list-action">
-                        <h:outputText value="#{product.price}" styleClass="product-price">
-                            <f:convertNumber currencySymbol="$" type="currency"/>
-                        </h:outputText>
-                        <p:commandButton value="Add To Cart" icon="pi pi-shopping-cart"
-                                         disabled="#{product.inventoryStatus == 'OUTOFSTOCK'}">
-                        </p:commandButton>
-                        <span class="product-badge status-#{product.inventoryStatus.name().toLowerCase()}">#{product.inventoryStatus.text}</span>
-                    </div>
-                </div>
-            </div>
-        </p:dataScroller>
-    </h:form>
-</div>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+        cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+            <hr></hr>
+            <br></br>
+            
+        </div>
+        <div class="card">
+            <img alt="teste" src="resources/images/Calebe.jpg" width="500px"/>
+            <img alt="teste" src="resources/images/Luis.jpg" width="500px" height="300px" style="margin-left: -1px"/>
+        </div>
+        
+        <div>
+    <p:divider align="left">
+        <div class="inline-flex align-items-center">
+            <i class="pi pi-user mr-2"/>
+            <b>Icon</b>
+        </div>
+    </p:divider>
+
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+        architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+            <br></br>
+            <br></br>
+            <br></br>
+        </div>
     </h:body>
 </html>
 
