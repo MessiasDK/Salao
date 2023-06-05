@@ -17,8 +17,8 @@
  
     <p:menubar>
        
- 
-        <p:menuitem value="Marcação" url="http://www.primefaces.org" icon="pi pi-shopping-bag" />
+        <p:menuitem value="Home" url="http://localhost:8080/Salao_Brecho/" icon="pi pi-home"/>
+        <p:menuitem value="Marcação" url="http://localhost:8080/Salao_Brecho/faces/marcação.xhtml" icon="pi pi-shopping-bag" />
         <p:menuitem value="Roupa" url="http://localhost:8080/Salao_Brecho/faces/roupa.xhtml" icon="pi pi-shopping-bag"  />
         <p:menuitem value="About Us" url="http://www.primefaces.org" icon="pi pi-users" />
  
@@ -116,21 +116,23 @@
             <img alt="teste" src="resources/images/Luis.jpg" width="500px" height="300px" style="margin-left: -1px"/>
         </div>
         
-        <div>
+        <h:form>
+        <div class="footer" style="background-color: lightgray; text-align: center">
     <p:divider align="left">
         <div class="inline-flex align-items-center">
-            <i class="pi pi-user mr-2"/>
-            <b>Icon</b>
+            
         </div>
+       
     </p:divider>
-
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-        architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+            <p>FIND US ON</p>
+            
+    
             <br></br>
             <br></br>
             <br></br>
+            
         </div>
+            </h:form>
     </h:body>
 </html>
 
