@@ -28,6 +28,149 @@
         </f:facet>
     </p:menubar>
 </h:form>
+               <br></br> <br></br>
+        
+   <style>
+    p {
+        line-height: 1.5;
+        margin: 0;
+    }
+</style>
+        <div class="product ">
+            <p:carousel circular="true" paginator="false">
+        <h:form>
+<p:card style="width: 20em; margin-top: -30px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/cabelo2.jpg" />
+        <a href="http://localhost:8080/Salao_Brecho/faces/index.xhtml"/>
+    </f:facet>
+    <f:facet name="title">
+        Salão
+    </f:facet>
+    
+
+    <p>Nós somos os melhores para cuidar do seu cabelo, venha e já com os própios olhos. Fazemos todo tipo de cuidado, desde tranças até mesmo um simples retoque. Esperamos por você!
+    </p>
+    <f:facet name="footer">
+        <p:commandButton value="Marcar" type="button" icon="pi pi-external-link" onclick="PF('dlg3').show()" styleClass="ui-button-raised ui-button-flat"/>
+       <p:dialog header="Faça a maracação!" widgetVar="dlg3" minHeight="40" width="350" showEffect="fade">
+    <span class="ui-float-label">
+       <p:inputText id="float-input" value="#{inputTextView.text}"/>
+       <p:outputLabel for="@previous" value="Username"/>
+   </span>
+           <br></br>
+    <div class="field">
+        <p:outputLabel for="username1" styleClass="block"></p:outputLabel>
+        <p:inputText id="username1" styleClass="block"/>
+        <br></br>
+        <small class="block">Coloque o seu nr de celular</small>
+    </div>
+             <br></br>
+    <div class="field">
+        <p:outputLabel for="username1" styleClass="block"></p:outputLabel>
+        <p:inputText id="username2" styleClass="block"/>
+        <br></br>
+        <small class="block">Coloque a data e a hora que deseja fazer a marcação</small>
+    </div>
+    <f:facet name="footer">
+      
+      <p:commandButton value="Show" type="button" icon="pi pi-external-link" onclick="PF('dlg1').show()" styleClass="ui-button-raised ui-button-flat"/>
+       <p:dialog header=" " widgetVar="dlg1" minHeight="40" width="350" showEffect="fade">
+    <p class="m-0">MARCAÇÃO FEITA!</p>
+</p:dialog>
+    </f:facet>
+</p:dialog>
+    </f:facet> 
+   
+</p:card>
+            
+            <p:card style="width: 20em; margin-left:420px; margin-top: -530px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa1.jpg"/>
+    </f:facet>
+    <f:facet name="title">
+        Brechó
+    </f:facet>
+
+    <p>É tudo sobre a formula perfeita! Para combinar com o seu cabelo, nós temos os melhores artigos de roupa no nosso brechó e claro, no melhor preço do mercado. Oportunidades como essas não se perdem ya!!</p>
+                <f:facet name="footer">
+        <p:button value="Comprar" styleClass="ui-button-raised ui-button-flat" href="http://localhost:8080/Salao_Brecho/faces/roupa.xhtml" />
+    </f:facet> 
+   
+</p:card>
+  
+             <p:card style="width: 20em; margin-left:820px; margin-top: -530px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/acess1.jpg"/>
+    </f:facet>
+    <f:facet name="title">
+        Acessórios
+    </f:facet>
+    
+
+                 <p>E para dar aquele toque especial, temos os nossos acessórios de beleza, só para complentar mesmo e, a preços muito acessíveis!</p>
+                 <br></br> <br></br> <br></br>
+ <f:facet name="footer">
+        <p:commandButton value="Comprar" type="button" icon="pi pi-external-link" onclick="PF('dlg3').show()" styleClass="ui-button-raised ui-button-flat"/>
+       <p:dialog header="Faça a sua compra!" widgetVar="dlg3" minHeight="40" width="350" showEffect="fade">
+    <span class="ui-float-label">
+       <p:inputText id="float-input1" value="#{inputTextView.text}"/>
+       <p:outputLabel for="@previous" value="Username"/>
+   </span>
+           <br></br>
+    <div class="field">
+        <p:outputLabel for="username1" styleClass="block"></p:outputLabel>
+        <p:inputText id="username3" styleClass="block"/>
+        <br></br>
+        <small class="block">Coloque o seu nr de celular</small>
+    </div>
+             <br></br>
+             
+           
+             
+    <f:facet name="footer">
+      
+      <p:commandButton value="Show" type="button" icon="pi pi-external-link" onclick="PF('dlg1').show()" styleClass="ui-button-raised ui-button-flat"/>
+       <p:dialog header=" " widgetVar="dlg1" minHeight="40" width="350" showEffect="fade">
+    <p class="m-0">MARCAÇÃO FEITA!</p>
+</p:dialog>
+    </f:facet>
+</p:dialog>
+    </f:facet>  
+ 
+</p:card>
+            
+</h:form>
+                </p:carousel>
+      </div>
+        
+                <p:divider align="center" type="dashed">
+        <b>Center</b>
+    </p:divider>
+
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+        cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+               <br></br>
+               <hr></hr>
+               
+                   <h:form>
+        <div class="footer" style="background-color: lightgray; text-align: center">
+    <p:divider align="left">
+        <div class="inline-flex align-items-center">
+            
+        </div>
+       
+    </p:divider>
+            <p>FIND US ON</p>
+            
+    
+            <br></br>
+            <br></br>
+            <br></br>
+            
+        </div>
+            </h:form>
     </h:body>
 </html>
 
