@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h:form>  
+            <p:growl id="messages"/>
+
+            <p:menubar>
+
+                <p:menuitem value="Home" url="http://localhost:8080/Salao_Brecho/" icon="pi pi-home"/>
+                <p:menuitem value="Marcação" url="http://localhost:8080/Salao_Brecho/faces/marcação.xhtml" icon="pi pi-shopping-bag" />
+                <p:menuitem value="Roupa" url="http://localhost:8080/Salao_Brecho/faces/roupa.xhtml" icon="pi pi-shopping-bag"  />
+                <p:menuitem value="About Us" url="http://www.primefaces.org" icon="pi pi-users" />
+
+                <f:facet name="options">
+                    <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+                    <p:commandButton type="button" value="Log In" icon="pi pi-home" />
+                </f:facet>
+            </p:menubar>
+        </h:form>
+        <br></br> <br></br>
+
+        <style>
+            p {
+                line-height: 1.5;
+                margin: 0;
+            }
+        </style>
+
+        <div class="product ">
+            <p:carousel circular="true" paginator="false">
+
+                <p:card style="width: 20em;">
+                    <f:facet name="header">
+                        <img alt="user header" src="resources/images/cabelo2.jpg" />
+                        <a href="http://localhost:8080/Salao_Brecho/faces/index.xhtml"/>
+                    </f:facet>
+                    <f:facet name="title">
+                        Salão
+                    </f:facet>
+
+
+                    <p>Nós somos os melhores para cuidar do seu cabelo, venha e já com os própios olhos. Fazemos todo tipo de cuidado, desde tranças até mesmo um simples retoque. Esperamos por você!
+                    </p>
+                    <f:facet name="footer">
+                        <h:form>
+                            <p:commandButton value="Marcar" type="button" icon="pi pi-external-link" onclick="PF('salaoDialog').show()" styleClass="ui-button-raised ui-button-flat"/>
+                        </h:form>
+                        <p:dialog header="Faça a marcação!" widgetVar="salaoDialog" minHeight="40" width="350" showEffect="fade" style="z-index: 1000">
+                            <h:form>
+                                <div class="field">
+                                    <p:outputLabel value="Nome do cliente" for="pedidoNomeCliente" styleClass="block"/>
+                                    <p:inputText id="pedidoNomeCliente" styleClass="block" value="#{pedidoBean.pedido.nome}" />
+                                </div>
+                                <div class="field">
+                                    <p:outputLabel value="Data de Marcação" for="pedidoDataMarcacao" styleClass="block"/>
+                                    <p:calendar value="#{pedidoBean.pedido.marcacao}" pattern="dd/MM/yyyy" id="pedidoDataMarcacao" styleClass="block"/>
+                                </div>
+                                <br/>
+
+                                <p:commandButton action="#{pedidoBean.inserir()}" value="Marcar" icon="pi pi-external-link" styleClass="ui-button-raised ui-button-flat"/>
+
+                            </h:form>
+
+
+                        </p:dialog>
+                    </f:facet> 
+                    <p:dialog  widgetVar="dlg1" minHeight="40" width="350" showEffect="fade" header="Aviso" >
+                        <h:outputText value="Pedido confirmado" />  
+                    </p:dialog>
+                </p:card>
+                <p:card style="width: 20em; ">
+
+                    <f:facet name="header">
+                        <img alt="user header" src="resources/images/roupa1.jpg"/>
+                    </f:facet>
+                    <f:facet name="title">
+                        Brechó
+                    </f:facet>
+
+                    <p>É tudo sobre a formula perfeita! Para combinar com o seu cabelo, nós temos os melhores artigos de roupa no nosso brechó e claro, no melhor preço do mercado. Oportunidades como essas não se perdem ya!!</p>
+                    <f:facet name="footer">
+                        <h:form>
+                            <p:button value="Comprar" styleClass="ui-button-raised ui-button-flat" href="http://localhost:8080/Salao_Brecho/faces/roupa.xhtml" />
+                        </h:form>
+                    </f:facet> 
+
+                </p:card>
+
+
+                <p:card style="width: 20em; ">
+
+                    <f:facet name="header">
+                        <img alt="user header" src="resources/images/acess1.jpg"/>
+                    </f:facet>
+                    <f:facet name="title">
+                        Acessórios
+                    </f:facet>
+
+
+                    <p>E para dar aquele toque especial, temos os nossos acessórios de beleza, só para complentar mesmo e, a preços muito acessíveis!</p>
+                    <br></br> <br></br> <br></br>
+                    <f:facet name="footer">
+                        <h:form>
+
+                            <p:commandButton value="Comprar" type="button" icon="pi pi-external-link" onclick="PF('dlg3').show()" styleClass="ui-button-raised ui-button-flat"/>
+                        </h:form>
+
+                        <p:dialog header="Faça a sua compra!" widgetVar="dlg3" minHeight="40" width="350" showEffect="fade">
+                            <h:form>
+
+                                <span class="ui-float-label">
+                                    <p:inputText id="float-input1" value="#{inputTextView.text}"/>
+                                    <p:outputLabel for="@previous" value="Username"/>
+                                </span>
+                                <br></br>
+                                <div class="field">
+                                    <p:outputLabel  styleClass="block"></p:outputLabel>
+                                    <p:inputText id="username3" styleClass="block"/>
+                                    <br></br>
+                                </div>
+                                <br></br>
+                            </h:form>
+
+
+
+                            <f:facet name="footer">
+                                <h:form>
+
+                                    <p:commandButton value="Show" type="button" icon="pi pi-external-link" onclick="PF('dlg1').show()" styleClass="ui-button-raised ui-button-flat"/>
+
+                                </h:form>
+                                <p:dialog header=" " widgetVar="dlg1" minHeight="40" width="350" showEffect="fade">
+                                    <p class="m-0">MARCAÇÃO FEITA!</p>
+                                </p:dialog>
+                            </f:facet>
+                        </p:dialog>
+                    </f:facet>  
+
+                </p:card>
+
+            </p:carousel>
+        </div>
+
+        <p:divider align="center" type="dashed" >
+            <b>Center</b>
+        </p:divider>
+
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+            cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+        <br></br>
+        <hr></hr>
+
+
+        <div class="footer" style="background-color: lightgray; text-align: center">
+            <p:divider align="left">
+                <div class="inline-flex align-items-center">
+
+                </div>
+
+            </p:divider>
+            <p>FIND US ON</p>
+
+
+
+            <br></br>
+            <br></br>
+            <br></br>
+
+        </div>
+
+
+
+    </h:body>
+</html>
+
