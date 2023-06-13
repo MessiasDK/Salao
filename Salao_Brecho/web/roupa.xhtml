@@ -17,10 +17,10 @@
  
     <p:menubar>
        
- 
-        <p:menuitem value="Marcação" url="http://www.primefaces.org" icon="pi pi-shopping-bag" />
-        <p:menuitem value="Roupa" url="http://www.primefaces.org" icon="pi pi-shopping-bag" />
-        <p:menuitem value="About Us" url="http://www.primefaces.org" icon="pi pi-users" />
+          <p:menuitem value="Home" url="http://localhost:8080/Salao_Brecho/" icon="pi pi-home"/>
+        <p:menuitem value="Serviços" url="http://localhost:8080/Salao_Brecho/faces/marcação.xhtml" icon="pi pi-shopping-bag" />
+        <p:menuitem value="Artigos" url="http://localhost:8080/Salao_Brecho/faces/roupa.xhtml" icon="pi pi-shopping-bag"  />
+        <p:menuitem value="About Us" url="http://localhost:8080/Salao_Brecho/faces/about.xhtml" icon="pi pi-users" />
  
         <f:facet name="options">
             <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
@@ -44,11 +44,61 @@
 </style>
 
         <h:form>
-        <p:card style="width: 25em">
+        <p:card style="width: 20em; margin-bottom: -90px">
     <f:facet name="header">
-        <img alt="user header" src="resources/images/Manguene.jpg"/>
+        <img alt="user header" src="resources/images/gabriela.jpg"/>
     </f:facet>
-            <p:panelGrid columns="2">
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="T-Shirt"/>
+
+        <h:outputText value="Size:"/>
+        <h:outputText value="S, M, L, XL, XXL"/>
+
+        <h:outputText value="Colors:"/>
+        <h:outputText value="Pink, Black, White, Blue"/>
+
+        <h:outputText value="Price:"/>
+        <h:outputText value="2400mzn"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton value="Marcar" type="button" icon="pi pi-external-link" onclick="PF('dlg3').show()" styleClass="ui-button-raised ui-button-flat"/>
+       <p:dialog header="Faça a maracação!" widgetVar="dlg3" minHeight="40" width="350" showEffect="fade">
+    <span class="ui-float-label">
+       <p:inputText id="float-input1" value="#{inputTextView.text}"/>
+       <p:outputLabel for="@previous" value="Username"/>
+   </span>
+           <br></br>
+    <div class="field">
+        <p:outputLabel for="username1" styleClass="block"></p:outputLabel>
+        <p:inputText id="username" styleClass="block"/>
+        <br></br>
+        <small class="block">Coloque o seu nr de celular</small>
+    </div>
+             <br></br>
+    <div class="field">
+        <p:outputLabel for="username1" styleClass="block"></p:outputLabel>
+        <p:inputText id="username9" styleClass="block"/>
+        <br></br>
+        <small class="block">Coloque o seu e-mail!</small>
+    </div>
+    <f:facet name="footer">
+      
+      <p:commandButton value="Show" type="button" icon="pi pi-external-link" onclick="PF('dlg1').show()" styleClass="ui-button-raised ui-button-flat"/>
+       <p:dialog header=" " widgetVar="dlg1" minHeight="40" width="350" showEffect="fade">
+           <p class="m-0">Irá receber um e-mail para confirmação da compra! <br></br> Obrigado pela preferência. Volte sempre!</p>
+</p:dialog>
+    </f:facet>
+</p:dialog>>
+    </f:facet>
+</p:card>
+            
+            <p:card style="width: 20em; margin-left:360px; margin-top: -565px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
             <h:outputText value="Name:"/>
         <h:outputText value="Kobe Bryant"/>
 
@@ -67,6 +117,294 @@
         <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
     </f:facet>
 </p:card>
+            
+        
+                   <p:card style="width: 20em; margin-left:1080px; margin-top: -565px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+         <p:commandButton value="Marcar" type="button" icon="pi pi-external-link" onclick="PF('dlg3').show()" styleClass="ui-button-raised ui-button-flat"/>
+       <p:dialog header="Faça a maracação!" widgetVar="dlg3" minHeight="40" width="350" showEffect="fade">
+    <span class="ui-float-label">
+       <p:inputText id="float-input" value="#{inputTextView.text}"/>
+       <p:outputLabel for="@previous" value="Username"/>
+   </span>
+           <br></br>
+    <div class="field">
+        <p:outputLabel for="username1" styleClass="block"></p:outputLabel>
+        <p:inputText id="username1" styleClass="block"/>
+        <br></br>
+        <small class="block">Coloque o seu nr de celular</small>
+    </div>
+             <br></br>
+    <div class="field">
+        <p:outputLabel for="username1" styleClass="block"></p:outputLabel>
+        <p:inputText id="username2" styleClass="block"/>
+        <br></br>
+        <small class="block">Coloque a data e a hora que deseja fazer a marcação</small>
+    </div>
+    <f:facet name="footer">
+      
+      <p:commandButton value="Show" type="button" icon="pi pi-external-link" onclick="PF('dlg1').show()" styleClass="ui-button-raised ui-button-flat"/>
+       <p:dialog header=" " widgetVar="dlg1" minHeight="40" width="350" showEffect="fade">
+    <p class="m-0">MARCAÇÃO FEITA!</p>
+</p:dialog>
+    </f:facet>
+</p:dialog>x
+    </f:facet>
+</p:card>
+            
+             <p:card style="width: 20em; margin-left:720px; margin-top: -565px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            
+                   <p:card style="width: 20em; margin-top: 30px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            
+            
+            <p:card style="width: 20em; margin-top:-560px; margin-left: 360px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            
+            
+            <p:card style="width: 20em; margin-top:-561px; margin-left: 720px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            
+            <p:card style="width: 20em; margin-top:-561px; margin-left: 1080px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            
+            <p:card style="width: 20em;">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            
+            <p:card style="width: 20em; margin-top:-560px; margin-left: 360px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            
+            <p:card style="width: 20em; margin-top:-560px; margin-left: 720px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            
+            <p:card style="width: 20em; margin-top:-560px; margin-left: 1080px">
+    <f:facet name="header">
+        <img alt="user header" src="resources/images/roupa2.jpg"/>
+    </f:facet>
+            <p:panelGrid columns="2" style="width:17em">
+            <h:outputText value="Name:"/>
+        <h:outputText value="Kobe Bryant"/>
+
+        <h:outputText value="Team:"/>
+        <h:outputText value="Los Angeles Lakers"/>
+
+        <h:outputText value="Position:"/>
+        <h:outputText value="Shooting Guard"/>
+
+        <h:outputText value="Number:"/>
+        <h:outputText value="24"/>
+        </p:panelGrid>
+
+    <f:facet name="footer">
+        <p:commandButton icon="pi pi-check" value="Save"/>
+        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+    </f:facet>
+</p:card>
+            </h:form>
+        <hr></hr>
+        
+        <h:form>
+        <div class="footer" style="background-color: lightgray; text-align: center">
+    <p:divider align="left">
+        <div class="inline-flex align-items-center">
+            
+        </div>
+       
+    </p:divider>
+            <p>FIND US ON</p>
+            
+    
+            <br></br>
+            <br></br>
+            <br></br>
+            
+        </div>
             </h:form>
     
     </h:body>
