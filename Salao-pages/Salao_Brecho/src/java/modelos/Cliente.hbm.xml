@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 11, 2023 4:14:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.Cliente" table="cliente" catalog="salao_brecho" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nome" type="string">
+            <column name="Nome" length="40" not-null="true" />
+        </property>
+        <property name="apelido" type="string">
+            <column name="Apelido" length="40" not-null="true" />
+        </property>
+        <property name="endereco" type="string">
+            <column name="Endereco" length="40" not-null="true" />
+        </property>
+        <property name="maracao" type="date">
+            <column name="Maracao" length="10" not-null="true" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="Sexo" length="15" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

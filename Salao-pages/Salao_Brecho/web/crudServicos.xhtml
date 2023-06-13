@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Servicos</title>
+    </h:head>
+    <h:body>
+        
+          <h:form>  
+            <p:growl id="messages"/>
+
+            <p:menubar>
+
+                <p:menuitem value="Home" url="http://localhost:8080/Salao_Brecho/" icon="pi pi-home"/>
+                <p:menuitem value="Marcação" url="http://localhost:8080/Salao_Brecho/faces/marcação.xhtml" icon="pi pi-shopping-bag" />
+                <p:menuitem value="Roupa" url="http://localhost:8080/Salao_Brecho/faces/roupa.xhtml" icon="pi pi-shopping-bag"  />
+                <p:menuitem value="About Us" url="http://www.primefaces.org" icon="pi pi-users" />
+
+                <f:facet name="options">
+                    <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+                    <p:commandButton type="button" value="Log In" icon="pi pi-home" />
+                </f:facet>
+            </p:menubar>
+        </h:form>
+        
+        
+         
+         <h:form id="formListado">
+             <p:dataTable id="tabelaServicos" paginator="true" paginatorPosition="bottom" rows="5" var="servico" value="#{servicoBean.getServicos()}" emptyMessage="Nao existem Servicos">
+                            <p:column headerText="ID Servico">
+                                <h:outputText value="#{servico.id}" />
+                            </p:column>
+                            <p:column headerText="Nome">
+                                <h:outputText value="#{servico.nome}" />
+                            </p:column>
+                            <p:column headerText="Apelido">
+                                <h:outputText value="#{servico.preco}" />
+                            </p:column>
+                           
+                            <p:column headerText="Accoes " style="text-align: center">
+                                <p:commandButton icon="ui-icon-pencil" title="Modificar" oncomplete="PF('dialogoModificar').show();" update=":formModificar">
+                                    <f:setPropertyActionListener target="#{servicoBean.servico}" value="#{servico}"/>
+                                </p:commandButton>
+                                  <p:commandButton icon="ui-icon-trash" title="Eliminar" oncomplete="PF('dialogoEliminar').show();" update=":formEliminar">
+                                    <f:setPropertyActionListener target="#{servicoBean.servico}" value="#{servico}"/>
+                                </p:commandButton>
+                            </p:column>
+                         
+                        </p:dataTable>
+                    </h:form>
+        
+        
+        
+        
+        
+        
+        
+     
+        
+        
+        
+        
+   
+         <h:form id="formularioInsercao">
+            <p:panel header="Inserir os dados">
+                <p:panelGrid columns="2">
+                  <p:outputLabel value="Id do servico"/>
+                  <p:inputText value="#{servicoBean.servico.id}"/>
+                    <p:outputLabel value="Nome do servico"/>
+                    <p:inputText value="#{servicoBean.servico.nome}"/>
+                    <p:outputLabel value="preco do servico"/>
+                    <p:inputText value="#{servicoBean.servico.preco}"/>             
+                </p:panelGrid>
+                <p:growl id='growl' life="1000"/>
+                <p:commandButton action="#{servicoBean.inserir()}" value="inserir" update="growl"/>
+            </p:panel>
+            
+        </h:form>
+        
+        
+        
+          <h:form id="formModificar">
+                        <p:dialog id="dlgModificar" header="Modificar Servicos" widgetVar="dialogoModificar" resizable="false" showEffect="fade" hideEffect="explode" modal="true">
+                            <p:panelGrid columns="2" style="margin: 0 auto;">                                
+                                <p:outputLabel value="Servicos:"/>
+                                <p:inputText value="#{servicoBean.servico.nome}"/>
+                                <p:outputLabel value="Servicos:"/>
+                                <p:inputText value="#{servicoBean.servico.preco}"/>
+                                
+                            </p:panelGrid>
+                            <p:commandButton  value="Guardar" actionListener="#{servicoBean.modificar()}" update=":formListado:tabelaServicos" oncomplete="PF('dialogoModificar').hide();"/>
+                            <p:commandButton  value="Cancelar" onclick="PF('dialogoModificar').hide();"/>
+                        </p:dialog>
+                    </h:form>
+
+                    <h:form id="formEliminar">
+                        <p:dialog id="dlgEliminar" header="Eliminar Servicos" widgetVar="dialogoEliminar" resizable="false" showEffect="fade" hideEffect="explode" modal="true">
+                            <h:outputText value="Deseja eliminar este registro?"/>
+                            <p:commandButton  value="Sim" actionListener="#{servicoBean.eliminar()}" update=":formListado:tabelaServicos" oncomplete="PF('dialogoEliminar').hide();"/>
+                            <p:commandButton  value="Nao" onclick="PF('dialogoEliminar').hide();"/>
+                        </p:dialog>
+                    </h:form>
+        
+        
+        
+    </h:body>
+</html>
+
